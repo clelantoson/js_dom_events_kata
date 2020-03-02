@@ -44,7 +44,6 @@ buttonEl.addEventListener('click', deleteOrAddCollapseClick);
 // FONCTIONNALITE 3 //
 let editButtonEl = document.querySelectorAll('.btn.btn-sm.btn-outline-secondary')[0]
 console.log(editButtonEl)
-
 const turnRed = () => {
   editButtonEl.style.color = "red";
 }
@@ -83,18 +82,20 @@ let viewCardEl = document.querySelectorAll('.card.mb-4.box-shadow');
 let textCardEl = document.querySelectorAll('p.card-text');
 
 const changeCard = () => {
-  viewCardEl.forEach(c => {
-    if (c.style.width === '100%'){
-      c.style.width = '20%' 
-      textCardEl.style.display = 'none'
+  for(let i = 0; i < viewCardEl.length; i++){
+    if (viewCardEl[i].style.width === '100%'){
+      viewCardEl[i].style.width = '20%' 
+      textCardEl[i].style.display = 'none'
     } else {
-      c.style.width = '100%'
-      textCardEl.style.display = ''
+      viewCardEl[i].style.width = '100%'
+      textCardEl[i].style.display = ''
     }
+   
   }
-  )}
+}  
 
 viewButtonEl.addEventListener('mouseover', changeCard);
+
 
 // Fonctionnalité 7 : //
 
