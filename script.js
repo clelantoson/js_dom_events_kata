@@ -98,5 +98,24 @@ viewButtonEl.addEventListener('mouseover', changeCard);
 
 
 // Fonctionnalité 7 : //
+let buttonArrowRight = document.querySelector('.btn.btn-secondary.my-2');
+let parentSixCards = document.querySelector('.col-md-4').parentNode;
+let fifthCard = document.querySelectorAll('.col-md-4')[5];
+let firstCard = document.querySelectorAll('.col-md-4')[0];
 
+const turnCardsR = () => {
+parentSixCards.insertBefore(fifthCard, firstCard)
+}
+buttonArrowRight.addEventListener('click', turnCardsR);
+
+// Fonctionnalité 8 : //
+let buttonArrowLeft = document.querySelector('.btn.btn-primary.my-2');
+
+
+const turnCardsL = (event) => {
+  event.preventDefault();
+  parentSixCards.insertBefore(firstCard, fifthCard)
+}
+
+buttonArrowLeft.addEventListener('click', turnCardsL);
 
